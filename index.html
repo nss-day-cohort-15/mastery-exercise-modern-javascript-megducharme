@@ -2,11 +2,36 @@
 <html>
 <head>
   <title>Battledome</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="quiz.css">
 </head>
 <body>
+  <article id="game-container">
 
-<script type="text/javascript" src="quiz.js"></script>
+    <section id="player-setup" class="card card--name">
+      <div class ="card_prompt">
+        <div>Name Your Princess!</div>
+        <div class="field">
+          <input type="text" name="princess-name" id="princess-name" class="field_textinput">
+        </div>
+      </div>
+
+      <div class="card__button">
+        <a class="card__link btn btn--big btn--pink"
+           href="#"
+           next="card--class">
+          <span class="btn__prompt">></span>
+          <span class="btn__text">What Kind of Princess Are You?</span>
+        </a>
+      </div>
+    </section>
+
+
+
+  </article>
+
+<script type="text/javascript" src="scripts/quiz.js"></script>
+<script type="text/javascript" src="scripts/classes.js"></script>
 <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
 </body>
 </html>
