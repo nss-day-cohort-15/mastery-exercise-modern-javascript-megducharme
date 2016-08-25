@@ -1,3 +1,5 @@
+ "use strict";
+
  /*
     Show the initial view that accepts player name
    */
@@ -10,7 +12,7 @@
   $(".card__link").click(function(e) {
     var nextCard = $(this).attr("next");
     var moveAlong = false;
-      console.log(nextCard)
+      console.log(nextCard);
 
     switch (nextCard) {
 

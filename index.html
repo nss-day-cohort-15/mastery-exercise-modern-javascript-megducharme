@@ -1,37 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
   <title>Battledome</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="quiz.css">
 </head>
 <body>
+<h1>Which Disney Princess is Best?</h1>
   <article id="game-container">
 
-    <section id="player-setup" class="card card--name">
-      <div class ="card_prompt">
-        <div>Name Your Princess!</div>
-        <div class="field">
-          <input type="text" name="princess-name" id="princess-name" class="field_textinput">
-        </div>
+<!-- PLAYER SETUP -->
+
+    <div class="row">
+      <div class="col-md-2"> <!-- BLANK DIV -->
+      <div class = "playerSetupDiv col-md-3">
+        <input type="text" name="playerName" placeholder="Player Name"><br><br>
+          <label>Select Your Princess</label><br>
+          <select>
+            <option value="Cinderella">Cinderella</option>
+            <option value="Belle">Belle</option>
+            <option value="Jasmine">Jasmine</option>
+            <option value="Elsa">Elsa</option>
+            <option value="Rapunzel">Rapunzel</option>
+            <option value="Mona">Mona</option>
+            <option value="Pocahontas">Pocahontas</option>
+            <option value="Mulan">Mulan</option>
+            <option value="Merida">Merida</option>
+          </select><br><br>
+
+          <label>Arm Your Princess With a Talent</label><br>
+          <select>
+            <option value="applyingMakeup">Applying Makeup</option>
+            <option value="buildingAFire">Building A Fire</option>
+            <option value="talingToAnimals">Taling To Aminals</option>
+          </select><br><br>
+      </div>
       </div>
 
-      <div class="card__button">
-        <a class="card__link btn btn--big btn--pink"
-           href="#"
-           next="card--class">
-          <span class="btn__prompt">></span>
-          <span class="btn__text">What Kind of Princess Are You?</span>
-        </a>
-      </div>
-    </section>
+      <div class="col-md-2">
+      <div class = "opponentSetupDiv col-md-3">
+        <input type="text" name="opponentName" placeholder="Opponent Name"><br><br>
+          <label>Select Your Opponent</label><br>
+          <select>
+            <option value="Cinderella">Cinderella</option>
+            <option value="Belle">Belle</option>
+            <option value="Jasmine">Jasmine</option>
+            <option value="Elsa">Elsa</option>
+            <option value="Rapunzel">Rapunzel</option>
+            <option value="Mona">Mona</option>
+            <option value="Pocahontas">Pocahontas</option>
+            <option value="Mulan">Mulan</option>
+            <option value="Merida">Merida</option>
+          </select><br><br>
 
+          <label>Arm Your Opponent</label><br>
+          <select>
+           <option value="applyingMakeup">Applying Makeup</option>
+            <option value="buildingAFire">Building A Fire</option>
+            <option value="talingToAnimals">Taling To Aminals</option>
+         </select><br><br>
+      <div class="col-md-2">
+      </div>
+      </div>
+      </div>
+      </div>
+    </div>
+
+    <button class="btn--pink">Who Is The Better Princess?!</button>
 
 
   </article>
+<script type="text/javascript" src="lib/bower_components/jquery/dist/jquery.min.js"></script>
 
-<script type="text/javascript" src="scripts/quiz.js"></script>
+<script type="text/javascript" src="dist/app.js"></script>
+<!-- <script type="text/javascript" src="scripts/quiz.js"></script>
 <script type="text/javascript" src="scripts/classes.js"></script>
-<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/talents.js"></script> -->
+
 </body>
 </html>
