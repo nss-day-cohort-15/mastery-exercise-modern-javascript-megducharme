@@ -13,61 +13,68 @@
 <!-- PLAYER SETUP -->
 
     <div class="row">
-      <div class="col-md-2"> <!-- BLANK DIV -->
+      <div class="col-md-2"></div> <!-- BLANK DIV -->
       <div class = "playerSetupDiv col-md-3">
-        <input type="text" name="playerName" placeholder="Player Name"><br><br>
-          <label>Select Your Princess</label><br>
-          <select>
-            <option value="Cinderella">Cinderella</option>
-            <option value="Belle">Belle</option>
-            <option value="Jasmine">Jasmine</option>
-            <option value="Elsa">Elsa</option>
-            <option value="Rapunzel">Rapunzel</option>
-            <option value="Mona">Mona</option>
-            <option value="Pocahontas">Pocahontas</option>
-            <option value="Mulan">Mulan</option>
-            <option value="Merida">Merida</option>
-          </select><br><br>
+        <input id="playerName" type="text" name="playerName" placeholder="Player Name" ><br><br>
+        <div id="displayPlayerName"></div>
+          <div id="playerPhoto" class="princessPhoto"></div>
+            <label>Select Your Princess</label><br>
+            <select id="playerClass">
+              <option value="Choose">Choose a Princess</option>
+              <option value="Cinderella">Cinderella</option>
+              <option value="Belle">Belle</option>
+              <option value="Jasmine">Jasmine</option>
+              <option value="Elsa">Elsa</option>
+              <option value="Rapunzel">Rapunzel</option>
+              <option value="Moana">Moana</option>
+              <option value="Pocahontas">Pocahontas</option>
+              <option value="Mulan">Mulan</option>
+              <option value="Merida">Merida</option>
+            </select><br><br>
+            <div id="displayPlayerStats"></div>
 
-          <label>Arm Your Princess With a Talent</label><br>
+          <label>Select Princess' Talent</label><br>
           <select>
             <option value="applyingMakeup">Applying Makeup</option>
             <option value="buildingAFire">Building A Fire</option>
             <option value="talingToAnimals">Taling To Aminals</option>
           </select><br><br>
       </div>
-      </div>
 
-      <div class="col-md-2">
-      <div class = "opponentSetupDiv col-md-3">
-        <input type="text" name="opponentName" placeholder="Opponent Name"><br><br>
-          <label>Select Your Opponent</label><br>
-          <select>
-            <option value="Cinderella">Cinderella</option>
-            <option value="Belle">Belle</option>
-            <option value="Jasmine">Jasmine</option>
-            <option value="Elsa">Elsa</option>
-            <option value="Rapunzel">Rapunzel</option>
-            <option value="Mona">Mona</option>
-            <option value="Pocahontas">Pocahontas</option>
-            <option value="Mulan">Mulan</option>
-            <option value="Merida">Merida</option>
-          </select><br><br>
 
-          <label>Arm Your Opponent</label><br>
+      <div class="col-md-2"></div>
+      <div class = "playerSetupDiv col-md-3">
+        <input id="opponentName" type="text" name="opponentName" placeholder="Opponent Name"><br><br>
+        <div id="displayOpponentName"></div>
+          <div id="opponentPhoto" class="princessPhoto"></div>
+          <label>Select <i>Other</i> Princess</label><br>
+            <select id="opponentClass">
+              <option value="Choose">Choose a Princess</option>
+              <option value="Cinderella">Cinderella</option>
+              <option value="Belle">Belle</option>
+              <option value="Jasmine">Jasmine</option>
+              <option value="Elsa">Elsa</option>
+              <option value="Rapunzel">Rapunzel</option>
+              <option value="Moana">Moana</option>
+              <option value="Pocahontas">Pocahontas</option>
+              <option value="Mulan">Mulan</option>
+              <option value="Merida">Merida</option>
+            </select><br><br>
+            <div id="displayOpponentStats"></div>
+
+          <label>Select Talent</label><br>
           <select>
            <option value="applyingMakeup">Applying Makeup</option>
             <option value="buildingAFire">Building A Fire</option>
             <option value="talingToAnimals">Taling To Aminals</option>
          </select><br><br>
-      <div class="col-md-2">
+      <div class="col-md-2"></div>
       </div>
       </div>
-      </div>
-      </div>
+
     </div>
 
-    <button class="btn--pink">Who Is The Better Princess?!</button>
+    <button class="btn--pink center-block">Who Is The Better Princess?!</button>
 
 
   </article>
