@@ -2,60 +2,69 @@
 "use strict";
 
 var princessClasses = require("./classes.js");
-    // gameFunctions = require("./player.js");
 
-/////BUILD PLAYER AND OPPONENT
-var princess;
-var opponent;
+let princess;
+let opponent;
+
 
 //PLAYER SELECTION INHERITS HEALTH/INTELL/DAMAGE
 function buildPlayerPrincess (princessName) {
   if (princessName === "Belle"){
     princess = new princessClasses.Belle();
-    console.log(princess.health);
+    // console.log(princess.health);
     $("#playerPhoto").html("<img src='http://vignette2.wikia.nocookie.net/disney/images/4/4a/Belle_2011.jpg/revision/latest?cb=20121220232742'/>");
-    $("#displayPlayerStats").html(`<h4>${princessName}'s health is starting at ${princess.health}</h4>`);
-    console.log(princess);
+    $("#displayPlayerStats").html(`<h4>${princessName}'s health is ${princess.health}.`);
+    // console.log(princess);
+    return princess;
 
   } else if (princessName === "Cinderella"){
     princess = new princessClasses.Cinderella();
     $("#playerPhoto").html("<img src='http://thefeministwire.com/wp-content/uploads/2014/03/Cinderella.jpg'/>");
-    $("#displayPlayerStats").html(`<h4>${princessName}'s health is starting at ${princess.health}</h4>`);
+    $("#displayPlayerStats").html(`<h4>${princessName}'s health is ${princess.health}.`);
+
+    return princess;
 
   } else if (princessName === "Jasmine"){
     princess = new princessClasses.Jasmine();
     $("#playerPhoto").html("<img src='http://vignette2.wikia.nocookie.net/disney/images/8/88/Jasmine_13.png/revision/latest?cb=20131219204418'/>");
     $("#displayPlayerStats").html(`<h4>${princessName}'s health is starting at ${princess.health}</h4>`);
+    return princess;
 
   } else if (princessName === "Elsa"){
     princess = new princessClasses.Elsa();
     $("#playerPhoto").html("<img src='https://doxiequeen1.files.wordpress.com/2013/12/tumblr_mxk28po0ws1rayburo1_500.jpg'/>");
     $("#displayPlayerStats").html(`<h4>${princessName}'s health is starting at ${princess.health}</h4>`);
+    return princess;
 
   } else if (princessName === "Rapunzel"){
     princess = new princessClasses.Rapunzel();
     $("#playerPhoto").html("<img src='http://vignette1.wikia.nocookie.net/p__/images/b/b3/Rapunzel_1_highres.jpg/revision/latest?cb=20120617190301&path-prefix=protagonist'/>");
     $("#displayPlayerStats").html(`<h4>${princessName}'s health is starting at ${princess.health}</h4>`);
+    return princess;
 
   } else if (princessName === "Moana"){
     princess = new princessClasses.Moana();
     $("#playerPhoto").html("<img src='http://www.juliemag.com/files/1457575_10153549633612182_2820443791690045900_n.jpg'/>");
     $("#displayPlayerStats").html(`<h4>${princessName}'s health is starting at ${princess.health}</h4>`);
+    return princess;
 
   } else if (princessName === "Pocahontas"){
     princess = new princessClasses.Pocahontas();
     $("#playerPhoto").html("<img src='https://s-media-cache-ak0.pinimg.com/236x/72/52/cb/7252cb729944eded00b82eafb0acbb3a.jpg'/>");
     $("#displayPlayerStats").html(`<h4>${princessName}'s health is starting at ${princess.health}</h4>`);
+    return princess;
 
   } else if (princessName === "Mulan"){
     princess = new princessClasses.Mulan();
     $("#playerPhoto").html("<img src='http://static8.comicvine.com/uploads/original/11/111746/4352749-famulan.jpg'/>");
     $("#displayPlayerStats").html(`<h4>${princessName}'s health is starting at ${princess.health}</h4>`);
+    return princess;
 
   } else if (princessName === "Merida"){
     princess = new princessClasses.Merida();
     $("#playerPhoto").html("<img src='https://s-media-cache-ak0.pinimg.com/564x/7b/83/13/7b831340cd7102907fd5c75a6f6ef7cb.jpg'/>");
     $("#displayPlayerStats").html(`<h4>${princessName}'s health is starting at ${princess.health}</h4>`);
+    return princess;
   }
 }
 
@@ -65,51 +74,61 @@ function buildOpponentPrincess (princessName) {
     opponent = new princessClasses.Belle();
     $("#opponentPhoto").html("<img src='http://vignette2.wikia.nocookie.net/disney/images/4/4a/Belle_2011.jpg/revision/latest?cb=20121220232742'/>");
     $("#displayOpponentStats").html(`<h4>${princessName}'s health is starting at ${opponent.health}</h4>`);
-    console.log(opponent.health);
+    // console.log(opponent.health);
+    // console.log("opponent", opponent);
+    return opponent;
 
   } else if (princessName === "Cinderella"){
     opponent = new princessClasses.Cinderella();
     $("#opponentPhoto").html("<img src='http://thefeministwire.com/wp-content/uploads/2014/03/Cinderella.jpg'/>");
     $("#displayOpponentStats").html(`<h4>${princessName}'s health is starting at ${opponent.health}</h4>`);
+      // console.log("opponent", opponent);
+    return opponent;
 
   } else if (princessName === "Jasmine"){
     opponent = new princessClasses.Jasmine();
     $("#opponentPhoto").html("<img src='http://vignette2.wikia.nocookie.net/disney/images/8/88/Jasmine_13.png/revision/latest?cb=20131219204418'/>");
     $("#displayOpponentStats").html(`<h4>${princessName}'s health is starting at ${opponent.health}</h4>`);
+    return opponent;
 
   } else if (princessName === "Elsa"){
     opponent = new princessClasses.Elsa();
     $("#opponentPhoto").html("<img src='https://doxiequeen1.files.wordpress.com/2013/12/tumblr_mxk28po0ws1rayburo1_500.jpg'/>");
     $("#displayOpponentStats").html(`<h4>${princessName}'s health is starting at ${opponent.health}</h4>`);
+    return opponent;
 
   } else if (princessName === "Rapunzel"){
     opponent = new princessClasses.Rapunzel();
     $("#opponentPhoto").html("<img src='http://vignette1.wikia.nocookie.net/p__/images/b/b3/Rapunzel_1_highres.jpg/revision/latest?cb=20120617190301&path-prefix=protagonist'/>");
     $("#displayOpponentStats").html(`<h4>${princessName}'s health is starting at ${opponent.health}</h4>`);
+    return opponent;
 
   } else if (princessName === "Moana"){
     opponent = new princessClasses.Moana();
     $("#opponentPhoto").html("<img src='http://www.juliemag.com/files/1457575_10153549633612182_2820443791690045900_n.jpg'/>");
     $("#displayOpponentStats").html(`<h4>${princessName}'s health is starting at ${opponent.health}</h4>`);
+    return opponent;
 
   } else if (princessName === "Pocahontas"){
     opponent = new princessClasses.Pocahontas();
     $("#opponentPhoto").html("<img src='https://s-media-cache-ak0.pinimg.com/236x/72/52/cb/7252cb729944eded00b82eafb0acbb3a.jpg'/>");
     $("#displayOpponentStats").html(`<h4>${princessName}'s health is starting at ${opponent.health}</h4>`);
+    return opponent;
 
   } else if (princessName === "Mulan"){
     opponent = new princessClasses.Mulan();
     $("#opponentPhoto").html("<img src='http://static8.comicvine.com/uploads/original/11/111746/4352749-famulan.jpg'/>");
     $("#displayOpponentStats").html(`<h4>${princessName}'s health is starting at ${opponent.health}</h4>`);
+    return opponent;
 
   } else if (princessName === "Merida"){
     opponent = new princessClasses.Merida();
     $("#opponentPhoto").html("<img src='https://s-media-cache-ak0.pinimg.com/564x/7b/83/13/7b831340cd7102907fd5c75a6f6ef7cb.jpg'/>");
     $("#displayOpponentStats").html(`<h4>${princessName}'s health is starting at ${opponent.health}</h4>`);
+    return opponent;
   }
 }
 
-// gameFunctions.determineBetterPrincess(princess, opponent);
 
 module.exports = {buildOpponentPrincess, buildPlayerPrincess};
 
@@ -127,10 +146,10 @@ let PrincessClass = function () {
   this.intelligence = 0;
 };
 
-// ORIGINAL PRINCESSES
+////// ORIGINAL PRINCESSES
 
 let OriginalPrincess = function() {
-  this.health = parseInt(Math.random()*(40-90)+40);
+  this.health = parseInt(Math.random()*(90-40)+40);
   this.intelligence = 0;
   this.damage = 10;
 };
@@ -140,7 +159,7 @@ OriginalPrincess.prototype = new PrincessClass();
 let Cinderella = function() {
   this.name = "Cinderella";
   this.health = this.health + 3;
-  this.intelligence = this.intelligence + 7;
+  this.intelligence = this.intelligence + 4;
 };
 Cinderella.prototype = new OriginalPrincess();
 
@@ -148,7 +167,7 @@ Cinderella.prototype = new OriginalPrincess();
 let Belle = function() {
   this.name = "Belle";
   this.health = this.health + 7;
-  this.intelligence = this.intelligence + 3;
+  this.intelligence = this.intelligence + 1;
 };
 Belle.prototype = new OriginalPrincess();
 
@@ -156,17 +175,17 @@ Belle.prototype = new OriginalPrincess();
 let Jasmine = function() {
   this.name = "Jasmine";
   this.health = this.health + 7;
-  this.intelligence = this.intelligence + 3;
+  this.intelligence = this.intelligence + 1;
 };
 Jasmine.prototype = new OriginalPrincess();
 
 
-// NEW PRINCESSES
+////// NEW PRINCESSES
 
 let NewPrincess = function () {
-  this.health = parseInt(Math.random()*(40-70)+40);
-  this.intelligence = 20;
-  this.damage = 15;
+  this.health = parseInt(Math.random()*(70-40)+40);
+  this.intelligence = 7;
+  this.damage = 13;
 };
 NewPrincess.prototype = new PrincessClass();
 
@@ -189,12 +208,12 @@ let Moana = function() {
 Moana.prototype = new NewPrincess();
 
 
-//BA PRINCESSES
+//////BA PRINCESSES
 
 let BAPrincess = function () {
-  this.health = parseInt(Math.random()*(60-90)+60);
-  this.intelligence = 30;
-  this.damage = 20;
+  this.health = parseInt(Math.random()*(90-60)+60);
+  this.intelligence = 12;
+  this.damage = 16;
 };
 BAPrincess.prototype = new PrincessClass();
 
@@ -202,21 +221,21 @@ BAPrincess.prototype = new PrincessClass();
 let Pocahontas = function() {
   this.name = "Pocahontas";
   this.health = this.health - 7;
-  this.intelligence = this.intelligence + 10;
+  this.intelligence = this.intelligence + 7;
 };
 Pocahontas.prototype = new BAPrincess();
 
 let Mulan = function() {
   this.name = "Mulan";
   this.health = this.health - 6;
-  this.intelligence = this.intelligence + 5;
+  this.intelligence = this.intelligence + 6;
 };
 Mulan.prototype = new BAPrincess();
 
 let Merida = function() {
   this.name = "Merida";
   this.health = this.health -3;
-  this.intelligence = this.intelligence + 3;
+  this.intelligence = this.intelligence + 5;
 };
 Merida.prototype = new BAPrincess();
 
@@ -232,46 +251,25 @@ var princessTalents = require("./talents.js"),
     princessClasses = require("./classes.js"),
     buildPrincess = require("./buildPrincess.js");
 
-var Princess = function (name) {
-  this.class = null;
-  this.talent = null;
-  this.health = null;
-
-  this.playerName = name || "no-named princess";
-  this.intelligence = 0;
-
-  this.toString = function () {
-    var output = [this.playerName,
-    " aka ",
-    this.class,
-    "is showing off her ability to ",
-    this.talent,
-    "has ",
-    this.health,
-    "health!"
-    ].join("");
-    return output;
-  };
-};
 
 ///////////CREATE PLAYER CLASS BASED ON USER SELECTION
 var player;
-  console.log(player);
 
 $("#playerClass").on("change", function (evt) {
   var playerClass = $("#playerClass").val();
-  console.log(playerClass);
-  buildPrincess.buildPlayerPrincess(playerClass);
+  // console.log(playerClass);
+  player = buildPrincess.buildPlayerPrincess(playerClass);
+console.log("player selected", player);
 });
 
 
 //////////CREATE OPPONENT CLASS BASED ON USER SELECTION
 var opponent;
-  console.log(opponent);
 
 $("#opponentClass").on("change", function (evt) {
   var opponentClass = $("#opponentClass").val();
-  buildPrincess.buildOpponentPrincess(opponentClass);
+  opponent = buildPrincess.buildOpponentPrincess(opponentClass);
+console.log("opponent selected", opponent);
 });
 
 
@@ -280,24 +278,24 @@ let playerName = $("#playerName").val();
 let opponentName = $("#opponentName").val();
 
 $("#playerName").keyup(function(e) {
-  console.log(playerName);
+  // console.log(playerName);
   var code = (e.keyCode ? e.keyCode : e.which);
   if (code==13) {
     playerName = $("#playerName").val();
     $("#displayPlayerName").html(`<h1>${playerName}</h1>`);
-    console.log("playerName", playerName);
+    // console.log("playerName", playerName);
     $("#playerName").hide();
     }
 });
 
 
 $("#opponentName").keyup(function(e) {
-  console.log(opponentName);
+  // console.log(opponentName);
   var code = (e.keyCode ? e.keyCode : e.which);
-  if (code==13) {
+  if (code==13 || code===9) {
     opponentName = $("#opponentName").val();
     $("#displayOpponentName").html(`<h1>${opponentName}</h1>`);
-    console.log("opponentName", opponentName);
+    // console.log("opponentName", opponentName);
     $("#opponentName").hide();
     }
 });
@@ -305,13 +303,44 @@ $("#opponentName").keyup(function(e) {
 
 //////////DETERMINE THE BETTER PRINCESS (AKA ATTACK FUNCTION)
 
-// function determineBetterPrincess (player, opponent) {
+  $("#determineBetterPrincess").click(function (evt){
+  let playerDamage = player.intelligence + player.damage;
+  let opponentDamage = opponent.intelligence + opponent.damage;
+  $("#playerWins").addClass("hidden");
+  $("#opponentWins").addClass("hidden");
+  $("#playerClass").hide();
+  $("#opponentClass").hide();
+  $("#yourPrincess").html("Your Princess");
+  $("#opponentPrincess").html("The other Princess");
 
-// }
+  player.health = player.health - opponentDamage;
+  opponent.health = opponent.health - playerDamage;
 
+  $("#displayPlayerStats").html(`<h4>${player.name}'s health is currently ${player.health}</h4>`);
 
-module.exports = {Princess};
+  $("#displayOpponentStats").html(`<h4>${opponent.name}'s health is currently ${opponent.health}</h4>`);
 
+    console.log("player health", player.health);
+    console.log("opponent damage", opponentDamage);
+    console.log("player intelligence", player.intelligence);
+    console.log("player health after fight", player.health);
+
+    if(player.health <= 0) {
+      $("#determineBetterPrincess").hide();
+      $("#playerClass").hide();
+      $("#opponentClass").hide();
+      $("#displayOpponentName").hide();
+      $("#displayPlayerName").hide();
+      $("#opponentWins").removeClass("hidden");
+    } else if (opponent.health <= 0){
+      $("#determineBetterPrincess").hide();
+      $("#playerClass").hide();
+      $("#opponentClass").hide();
+      $("#displayOpponentName").hide();
+      $("#displayPlayerName").hide();
+      $("#playerWins").removeClass("hidden");
+    }
+  });
 
 
 },{"./buildPrincess.js":1,"./classes.js":2,"./talents.js":4}],4:[function(require,module,exports){

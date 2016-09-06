@@ -4,46 +4,25 @@ var princessTalents = require("./talents.js"),
     princessClasses = require("./classes.js"),
     buildPrincess = require("./buildPrincess.js");
 
-var Princess = function (name) {
-  this.class = null;
-  this.talent = null;
-  this.health = null;
-
-  this.playerName = name || "no-named princess";
-  this.intelligence = 0;
-
-  this.toString = function () {
-    var output = [this.playerName,
-    " aka ",
-    this.class,
-    "is showing off her ability to ",
-    this.talent,
-    "has ",
-    this.health,
-    "health!"
-    ].join("");
-    return output;
-  };
-};
 
 ///////////CREATE PLAYER CLASS BASED ON USER SELECTION
 var player;
-  console.log(player);
 
 $("#playerClass").on("change", function (evt) {
   var playerClass = $("#playerClass").val();
-  console.log(playerClass);
-  buildPrincess.buildPlayerPrincess(playerClass);
+  // console.log(playerClass);
+  player = buildPrincess.buildPlayerPrincess(playerClass);
+console.log("player selected", player);
 });
 
 
 //////////CREATE OPPONENT CLASS BASED ON USER SELECTION
 var opponent;
-  console.log(opponent);
 
 $("#opponentClass").on("change", function (evt) {
   var opponentClass = $("#opponentClass").val();
-  buildPrincess.buildOpponentPrincess(opponentClass);
+  opponent = buildPrincess.buildOpponentPrincess(opponentClass);
+console.log("opponent selected", opponent);
 });
 
 
@@ -52,24 +31,24 @@ let playerName = $("#playerName").val();
 let opponentName = $("#opponentName").val();
 
 $("#playerName").keyup(function(e) {
-  console.log(playerName);
+  // console.log(playerName);
   var code = (e.keyCode ? e.keyCode : e.which);
   if (code==13) {
     playerName = $("#playerName").val();
     $("#displayPlayerName").html(`<h1>${playerName}</h1>`);
-    console.log("playerName", playerName);
+    // console.log("playerName", playerName);
     $("#playerName").hide();
     }
 });
 
 
 $("#opponentName").keyup(function(e) {
-  console.log(opponentName);
+  // console.log(opponentName);
   var code = (e.keyCode ? e.keyCode : e.which);
-  if (code==13) {
+  if (code==13 || code===9) {
     opponentName = $("#opponentName").val();
     $("#displayOpponentName").html(`<h1>${opponentName}</h1>`);
-    console.log("opponentName", opponentName);
+    // console.log("opponentName", opponentName);
     $("#opponentName").hide();
     }
 });
@@ -77,11 +56,42 @@ $("#opponentName").keyup(function(e) {
 
 //////////DETERMINE THE BETTER PRINCESS (AKA ATTACK FUNCTION)
 
-// function determineBetterPrincess (player, opponent) {
+  $("#determineBetterPrincess").click(function (evt){
+  let playerDamage = player.intelligence + player.damage;
+  let opponentDamage = opponent.intelligence + opponent.damage;
+  $("#playerWins").addClass("hidden");
+  $("#opponentWins").addClass("hidden");
+  $("#playerClass").hide();
+  $("#opponentClass").hide();
+  $("#yourPrincess").html("Your Princess");
+  $("#opponentPrincess").html("The other Princess");
 
-// }
+  player.health = player.health - opponentDamage;
+  opponent.health = opponent.health - playerDamage;
 
+  $("#displayPlayerStats").html(`<h4>${player.name}'s health is currently ${player.health}</h4>`);
 
-module.exports = {Princess};
+  $("#displayOpponentStats").html(`<h4>${opponent.name}'s health is currently ${opponent.health}</h4>`);
 
+    console.log("player health", player.health);
+    console.log("opponent damage", opponentDamage);
+    console.log("player intelligence", player.intelligence);
+    console.log("player health after fight", player.health);
+
+    if(player.health <= 0) {
+      $("#determineBetterPrincess").hide();
+      $("#playerClass").hide();
+      $("#opponentClass").hide();
+      $("#displayOpponentName").hide();
+      $("#displayPlayerName").hide();
+      $("#opponentWins").removeClass("hidden");
+    } else if (opponent.health <= 0){
+      $("#determineBetterPrincess").hide();
+      $("#playerClass").hide();
+      $("#opponentClass").hide();
+      $("#displayOpponentName").hide();
+      $("#displayPlayerName").hide();
+      $("#playerWins").removeClass("hidden");
+    }
+  });
 

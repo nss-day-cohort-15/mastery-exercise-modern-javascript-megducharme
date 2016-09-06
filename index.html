@@ -10,15 +10,27 @@
 <h1>Which Disney Princess is Best?</h1>
   <article id="game-container">
 
-<!-- PLAYER SETUP -->
+<!-- Player or Opponent Wins -->
+    <div class ="row">
+      <div class="col-md-12 hidden winner" id="playerWins">
+        <h1>Your princess is BEST!</h1>
+      </div>
+      <div class="col-md-12 hidden winner" id="opponentWins">
+        <h1>The <i>Other</i> Princess is Better. :(</h1>
+      </div>
+    </div>
 
+
+<!-- PLAYER SETUP -->
     <div class="row">
-      <div class="col-md-2"></div> <!-- BLANK DIV -->
+
+      <div class="col-md-2"></div> <!-- BLANK DIV FOR BOOTSTRAP -->
+
       <div class = "playerSetupDiv col-md-3">
         <div id="displayPlayerName"></div>
         <input id="playerName" type="text" name="playerName" placeholder="Player Name" ><br><br>
           <div id="playerPhoto" class="princessPhoto"></div>
-            <label>Select Your Princess</label><br>
+            <label id="yourPrincess">Select Your Princess</label><br>
             <select id="playerClass">
               <option value="Choose">Choose a Princess</option>
               <option value="Cinderella">Cinderella</option>
@@ -42,12 +54,13 @@
       </div>
 
 
-      <div class="col-md-2"></div>
+      <div class="col-md-2"></div><!-- BLANK DIV FOR BOOTSTRAP -->
+
       <div class = "playerSetupDiv col-md-3">
         <div id="displayOpponentName"></div>
         <input id="opponentName" type="text" name="opponentName" placeholder="Opponent Name"><br><br>
           <div id="opponentPhoto" class="princessPhoto"></div>
-          <label>Select <i>Other</i> Princess</label><br>
+          <label id="opponentPrincess">Select <i>Other</i> Princess</label><br>
             <select id="opponentClass">
               <option value="Choose">Choose a Princess</option>
               <option value="Cinderella">Cinderella</option>
@@ -68,13 +81,14 @@
             <option value="buildingAFire">Building A Fire</option>
             <option value="talingToAnimals">Taling To Aminals</option>
          </select><br><br> -->
-      <div class="col-md-2"></div>
-      </div>
-      </div>
 
+      <div class="col-md-2"></div><!-- BLANK DIV FOR BOOTSTRAP -->
+
+      </div>
+      </div>
     </div>
 
-    <button class="btn--pink center-block">Who Is The Better Princess?!</button>
+    <button class="btn--pink center-block" id="determineBetterPrincess">Who Is The Better Princess?!</button>
 
 
   </article>
