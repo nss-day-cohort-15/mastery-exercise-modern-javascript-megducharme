@@ -1,0 +1,44 @@
+h1 {
+  color: purple;
+  text-align: center;
+}
+
+body {
+  background-color: lightpink;
+}
+
+.btn {
+  text-decoration: none;
+  background-color: white;
+  color: #888;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 10px;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 10px 5px;
+  min-width: 260px;
+}
+
+.playerSetupDiv {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.btn--pink {
+  border-color: #ff3399;
+  color: white;
+  background-color: #ff3399;
+  margin-top: 20px;
+}
+
+.princessPhoto img {
+  height: 270px;
+  width: 200px;
+}
+
+.winner {
+  font-size: 90px;
+  color: white;
+}

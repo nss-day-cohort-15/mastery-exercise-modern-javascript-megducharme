@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Battledome</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="quiz.css">
+</head>
+<body>
+<h1>Which Disney Princess is Best?</h1>
+  <article id="game-container">
+
+<!-- Player or Opponent Wins -->
+    <div class ="row">
+      <div class="col-md-12 hidden winner" id="playerWins">
+        <h1>Your princess is BEST!</h1>
+      </div>
+      <div class="col-md-12 hidden winner" id="opponentWins">
+        <h1>The <i>Other</i> Princess is Better. :(</h1>
+      </div>
+    </div>
+
+
+<!-- PLAYER SETUP -->
+    <div class="row">
+
+      <div class="col-md-2"></div> <!-- BLANK DIV FOR BOOTSTRAP -->
+
+      <div class = "playerSetupDiv col-md-3">
+        <div id="displayPlayerName"></div>
+        <input id="playerName" type="text" name="playerName" placeholder="Player Name" ><br><br>
+          <div id="playerPhoto" class="princessPhoto"></div>
+            <label id="yourPrincess">Select Your Princess</label><br>
+            <select id="playerClass">
+              <option value="Choose">Choose a Princess</option>
+              <option value="Cinderella">Cinderella</option>
+              <option value="Belle">Belle</option>
+              <option value="Jasmine">Jasmine</option>
+              <option value="Elsa">Elsa</option>
+              <option value="Rapunzel">Rapunzel</option>
+              <option value="Moana">Moana</option>
+              <option value="Pocahontas">Pocahontas</option>
+              <option value="Mulan">Mulan</option>
+              <option value="Merida">Merida</option>
+            </select><br><br>
+            <div id="displayPlayerStats"></div>
+
+          <!-- <label>Select Princess' Talent</label><br>
+          <select>
+            <option value="applyingMakeup">Applying Makeup</option>
+            <option value="buildingAFire">Building A Fire</option>
+            <option value="talingToAnimals">Taling To Aminals</option>
+          </select><br><br> -->
+      </div>
+
+
+      <div class="col-md-2"></div><!-- BLANK DIV FOR BOOTSTRAP -->
+
+      <div class = "playerSetupDiv col-md-3">
+        <div id="displayOpponentName"></div>
+        <input id="opponentName" type="text" name="opponentName" placeholder="Opponent Name"><br><br>
+          <div id="opponentPhoto" class="princessPhoto"></div>
+          <label id="opponentPrincess">Select <i>Other</i> Princess</label><br>
+            <select id="opponentClass">
+              <option value="Choose">Choose a Princess</option>
+              <option value="Cinderella">Cinderella</option>
+              <option value="Belle">Belle</option>
+              <option value="Jasmine">Jasmine</option>
+              <option value="Elsa">Elsa</option>
+              <option value="Rapunzel">Rapunzel</option>
+              <option value="Moana">Moana</option>
+              <option value="Pocahontas">Pocahontas</option>
+              <option value="Mulan">Mulan</option>
+              <option value="Merida">Merida</option>
+            </select><br><br>
+            <div id="displayOpponentStats"></div>
+
+          <!-- <label>Select Talent</label><br>
+          <select>
+           <option value="applyingMakeup">Applying Makeup</option>
+            <option value="buildingAFire">Building A Fire</option>
+            <option value="talingToAnimals">Taling To Aminals</option>
+         </select><br><br> -->
+
+      <div class="col-md-2"></div><!-- BLANK DIV FOR BOOTSTRAP -->
+
+      </div>
+      </div>
+    </div>
+
+    <button class="btn--pink center-block" id="determineBetterPrincess">Who Is The Better Princess?!</button>
+
+
+  </article>
+<script type="text/javascript" src="lib/bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="dist/app.js"></script>
+</body>
+</html>
