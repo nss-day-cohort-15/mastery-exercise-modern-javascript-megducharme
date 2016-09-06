@@ -14,7 +14,7 @@ let PrincessClass = function () {
 // ORIGINAL PRINCESSES
 
 let OriginalPrincess = function() {
-  this.health = 30;
+  this.health = parseInt(Math.random()*(40-90)+40);
   this.intelligence = 0;
   this.damage = 10;
 };
@@ -48,7 +48,7 @@ Jasmine.prototype = new OriginalPrincess();
 // NEW PRINCESSES
 
 let NewPrincess = function () {
-  this.health = 15;
+  this.health = parseInt(Math.random()*(40-70)+40);
   this.intelligence = 20;
   this.damage = 15;
 };
@@ -76,7 +76,7 @@ Moana.prototype = new NewPrincess();
 //BA PRINCESSES
 
 let BAPrincess = function () {
-  this.health = -5;
+  this.health = parseInt(Math.random()*(60-90)+60);
   this.intelligence = 30;
   this.damage = 20;
 };
@@ -85,14 +85,14 @@ BAPrincess.prototype = new PrincessClass();
 
 let Pocahontas = function() {
   this.name = "Pocahontas";
-  this.health = this.health -7;
+  this.health = this.health - 7;
   this.intelligence = this.intelligence + 10;
 };
 Pocahontas.prototype = new BAPrincess();
 
 let Mulan = function() {
   this.name = "Mulan";
-  this.health = this.health -6;
+  this.health = this.health - 6;
   this.intelligence = this.intelligence + 5;
 };
 Mulan.prototype = new BAPrincess();
